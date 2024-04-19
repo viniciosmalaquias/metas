@@ -32,7 +32,21 @@ function calculaTempo(tempoObjetivo) {
     segundos %= 60;
     minutos %= 60;
     horas %= 24;
-
+    if(tempofinal>0){
         return dias + " dias " + horas + " horas " + minutos + " minutos " + segundos + " segundos";
-
+    }else{
+        return"PRAZO ENCERRADO!!!"
+    }
 }
+function atualizaCronometro(){
+    //laço de repetição para interagir com todos os objetivos
+    for(let 1 = 0;1 < contadores.length; 1++){
+        contadores[i].textContent = calculaTempo(tempos{1}); //textContent mostra na tela a meta
+    }
+}
+function comecaCronometro(){
+    atualizaCronometro(); //chamada da função criada anteriormente dentro desta função
+    setInterval(atualizaCronometro, 1000); //função que faz a contagem do tempo a cada seg.
+}
+comecaCronometro(); //chamada da função que inicia o cronometro
+
